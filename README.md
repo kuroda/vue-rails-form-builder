@@ -4,6 +4,33 @@ vue-form-for
 A custom Rails form builder for Vue.js
 
 Synopsis
+--------
+
+```
+<%= vue_form_for User.new do |f| %>
+  <%= f.text_field :name %>
+<% end %>
+```
+
+```html
+<form ...>
+  ...
+  <input v-model="user.name" type="text" name="user[name]" ... />
+</form>
+```
+
+Installation
+------------
+
+Add the following line to `Gemfile`:
+
+```ruby
+gem "vue-form-for"
+```
+
+Run `bundle install` on the terminal.
+
+Usage
 -----
 
 ```
@@ -49,21 +76,31 @@ document.addEventListener("DOMContentLoaded", () => {
 Add this line to the ERB template:
 
 ```text
-<%= javascript_pack_tag 'new_user_form' %>
+<%= javascript_pack_tag "new_user_form" %>
 ```
 
 Then, you can get the value of `user[name]` field by the `user.name`.
 
-Installation
-------------
+Other Functionalities
+---------------------
 
-Add the following line to `Gemfile`:
+You can provide a hash to the `:v` option:
 
-```ruby
-gem 'vue-form-for'
+```
+<%= vue_form_for User.new do |f| %>
+  <%= f.text_field :name, v: { model: "customer.name" } %>
+  <%= f.submit "Create", v: { if: "submittable" } %>
+<% end %>
 ```
 
-Run `bundle install` on the terminal.
+The above ERB template is identical with the following one:
+
+```
+<%= vue_form_for User.new do |f| %>
+  <%= f.text_field :name, "v-model" => "customer.name" %>
+  <%= f.submit "Create", "v-if" => "submittable" %>
+<% end %>
+```
 
 License
 -------
