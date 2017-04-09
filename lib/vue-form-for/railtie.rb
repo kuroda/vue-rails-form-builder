@@ -1,5 +1,5 @@
-require 'vue-form-for/form_helper'
-require 'vue-form-for/tag_helper'
+require "vue-form-for/form_helper"
+require "vue-form-for/tag_helper"
 
 module VueFormFor
   class Railtie < Rails::Railtie
