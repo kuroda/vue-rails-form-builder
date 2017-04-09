@@ -1,2 +1,2 @@
 require 'vue-form-for/form_builder'
-require 'vue-form-for/railtie' if defined?(Rails)
+require 'vue-form-for/railtie'

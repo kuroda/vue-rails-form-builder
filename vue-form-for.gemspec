@@ -11,6 +11,8 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
 
   s.required_ruby_version = ">= 2.2.2"
+  s.add_dependency "actionview", ">= 4.2"
+  s.add_dependency "railties", ">= 4.2"
 
   s.files = %w(CHANGELOG.md README.md MIT-LICENSE) + Dir.glob("lib/**/*")
 end
