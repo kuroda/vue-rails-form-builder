@@ -81,27 +81,6 @@ Add this line to the ERB template:
 
 Then, you can get the value of `user[name]` field by the `user.name`.
 
-Other Functionalities
----------------------
-
-You can provide a hash to the `:v` option:
-
-```
-<%= vue_form_for User.new do |f| %>
-  <%= f.text_field :name, v: { model: "customer.name" } %>
-  <%= f.submit "Create", v: { if: "submittable" } %>
-<% end %>
-```
-
-The above ERB template is identical with the following one:
-
-```
-<%= vue_form_for User.new do |f| %>
-  <%= f.text_field :name, "v-model" => "customer.name" %>
-  <%= f.submit "Create", "v-if" => "submittable" %>
-<% end %>
-```
-
 License
 -------
 

@@ -26,18 +26,6 @@ module VueFormFor
     end
 
     private def resolve_vue_options(options)
-      if options[:v].kind_of?(Hash)
-        h = options.delete(:v)
-        h.each do |key, value|
-          case key
-          when /\A[:@]/
-            options[key] = value
-          else
-            options[:"v-#{key}"] = value
-          end
-        end
-      end
-
       if options[:bind].kind_of?(Hash)
         h = options.delete(:bind)
         h.each do |key, value|
