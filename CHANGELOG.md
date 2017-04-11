@@ -1,5 +1,9 @@
 # CHANGELOG - vue-form-for
 
+## 0.3.1 (2017-04-11)
+
+* Fix `check_box` and `radio_button` helper methods.
+
 ## 0.3.0 (2017-04-09)
 
 * Add `vue_tag` and `vue_content_tag` helper methods
