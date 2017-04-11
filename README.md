@@ -141,6 +141,20 @@ In the example below, these two lines have the same result:
 <%= vue_content_tag(:button, "Click me!", "v-bind:disabled" => "!clickable")
 ```
 
+If you want to add a normal attribute without `v-bind:` prefix,
+specify `true` (boolean) to these keys:
+
+```
+<%= vue_content_tag(:button, "Click me!", disabled: true)
+```
+
+This line produces the following HTML fragment:
+
+```html
+<button disabled="disabled">Click me!</button>
+```
+
+
 ### Vue.js directives
 
 If the *HTML options* have one or more of the following keys
