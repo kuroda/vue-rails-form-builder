@@ -6,7 +6,7 @@ A custom Rails form builder for Vue.js
 Synopsis
 --------
 
-```
+```erb
 <%= vue_form_for User.new do |f| %>
   <%= f.text_field :name %>
 <% end %>
@@ -33,7 +33,7 @@ Run `bundle install` on the terminal.
 Usage
 -----
 
-```
+```erb
 <%= vue_form_for User.new do |f| %>
   <%= f.text_field :name %>
   <%= f.submit "Create" %>
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 Add this line to the ERB template:
 
-```text
+```erb
 <%= javascript_pack_tag "new_user_form" %>
 ```
 
@@ -96,16 +96,16 @@ they get transformed into the Vue.js `v-bind` directives.
 
 In the example below, these two lines have the same result:
 
-```
-<%= vue_content_tag(:span, "Hello", bind: { style: "{ color: textColor }" })
-<%= vue_content_tag(:span, "Hello", "v-bind:style" => "{ color: textColor }" })
+```erb
+<%= vue_content_tag(:span, "Hello", bind: { style: "{ color: textColor }" }) %>
+<%= vue_content_tag(:span, "Hello", "v-bind:style" => "{ color: textColor }" }) %>
 ```
 
 Note that you should use the latter style if you want to specify *modifiers*
 to the `v-bind` directives. For example:
 
-```
-<%= vue_content_tag(:span, "Hello", "v-bind:text-content.prop" => "message" })
+```erb
+<%= vue_content_tag(:span, "Hello", "v-bind:text-content.prop" => "message" }) %>
 ```
 
 ### The `:on` option
@@ -115,17 +115,17 @@ they get transformed into the Vue.js `v-on` directives.
 
 In the example below, these two lines have the same result:
 
-```
-<%= vue_content_tag(:span, "Hello", on: { click: "doThis" })
-<%= vue_content_tag(:span, "Hello", "v-on:click" => "doThis" })
+```erb
+<%= vue_content_tag(:span, "Hello", on: { click: "doThis" }) %>
+<%= vue_content_tag(:span, "Hello", "v-on:click" => "doThis" }) %>
 ```
 
 Note that you should use the latter style if you want to specify *modifiers*
 to the `v-on` directives. For example:
 
-```
-<%= vue_content_tag(:span, "Hello", "v-on:click.once" => "doThis" })
-<%= vue_content_tag(:button, "Hello", "v-on:click.prevent" => "doThis" })
+```erb
+<%= vue_content_tag(:span, "Hello", "v-on:click.once" => "doThis" }) %>
+<%= vue_content_tag(:button, "Hello", "v-on:click.prevent" => "doThis" }) %>
 ```
 
 ### Boolean attributes
@@ -136,16 +136,16 @@ the key gets transformed by adding `v-bind:` to its head.
 
 In the example below, these two lines have the same result:
 
-```
-<%= vue_content_tag(:button, "Click me!", disabled: "!clickable")
-<%= vue_content_tag(:button, "Click me!", "v-bind:disabled" => "!clickable")
+```erb
+<%= vue_content_tag(:button, "Click me!", disabled: "!clickable") %>
+<%= vue_content_tag(:button, "Click me!", "v-bind:disabled" => "!clickable") %>
 ```
 
 If you want to add a normal attribute without `v-bind:` prefix,
 specify `true` (boolean) to these keys:
 
-```
-<%= vue_content_tag(:button, "Click me!", disabled: true)
+```erb
+<%= vue_content_tag(:button, "Click me!", disabled: true) %>
 ```
 
 This line produces the following HTML fragment:
@@ -165,16 +165,16 @@ then, these keys get transformed by adding `v-` to their head.
 
 In the example below, these two lines have the same result:
 
-```
-<%= vue_tag(:hr`, `if: "itemsPresent")
-<%= vue_tag(:hr, "v-if" => "itemsPresent")
+```erb
+<%= vue_tag(:hr, if: "itemsPresent") %>
+<%= vue_tag(:hr, "v-if" => "itemsPresent") %>
 ```
 
 Note that the `:else_if` key is transformed into the `v-else-if` directive:
 
-```
-<%= vue_tag(:hr, else_if: "itemsPresent")
-<%= vue_tag(:hr, "v-else-if" => "itemsPresent")
+```erb
+<%= vue_tag(:hr, else_if: "itemsPresent") %>
+<%= vue_tag(:hr, "v-else-if" => "itemsPresent") %>
 ```
 
 ### Extensions to the form building helpers
@@ -185,7 +185,7 @@ have these additional behavior.
 
 Example:
 
-```
+```erb
 <%= vue_form_for User.new do |f| %>
   <%= f.text_field :name, model: "userName" %>
   <label>
