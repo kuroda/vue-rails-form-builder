@@ -1,5 +1,9 @@
 # CHANGELOG - vue-form-for
 
+## 0.3.3 (2017-05-09)
+
+* Generate v-model attr for check boxes and radio buttons.
+
 ## 0.3.2 (2017-05-09)
 
 * Generate correct value for v-model on nested form.
