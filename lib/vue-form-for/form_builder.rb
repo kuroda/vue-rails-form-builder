@@ -9,7 +9,8 @@ module VueFormFor
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
         def #{selector}(method, options = {})
           resolve_vue_options(options)
-          options[:"v-model"] ||= "\#{@object_name}.\#{method}"
+          namespace = @object_name.gsub(/\\[/, ".").gsub(/\\]/, "")
+          options[:"v-model"] ||= "\#{namespace}.\#{method}"
           super(method, options)
         end
       RUBY_EVAL
