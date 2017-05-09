@@ -23,11 +23,15 @@ module VueFormFor
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
       resolve_vue_options(options)
+      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
+      options[:"v-model"] ||= "#{namespace}.#{method}"
       super(method, options, checked_value, unchecked_value)
     end
 
     def radio_button(method, tag_value, options = {})
       resolve_vue_options(options)
+      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
+      options[:"v-model"] ||= "#{namespace}.#{method}"
       super(method, tag_value, options)
     end
 
