@@ -1,5 +1,9 @@
 # CHANGELOG - vue-form-for
 
+## 0.3.2 (2017-05-09)
+
+* Generate correct value for v-model on nested form.
+
 ## 0.3.1 (2017-04-11)
 
 * Fix `check_box` and `radio_button` helper methods.
