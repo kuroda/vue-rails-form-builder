@@ -9,8 +9,7 @@ module VueFormFor
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
         def #{selector}(method, options = {})
           resolve_vue_options(options)
-          namespace = @object_name.gsub(/\\[/, ".").gsub(/\\]/, "")
-          options[:"v-model"] ||= "\#{namespace}.\#{method}"
+          add_v_model_attribute(method, options)
           super(method, options)
         end
       RUBY_EVAL
@@ -23,15 +22,13 @@ module VueFormFor
 
     def check_box(method, options = {}, checked_value = "1", unchecked_value = "0")
       resolve_vue_options(options)
-      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
-      options[:"v-model"] ||= "#{namespace}.#{method}"
+      add_v_model_attribute(method, options)
       super(method, options, checked_value, unchecked_value)
     end
 
     def radio_button(method, tag_value, options = {})
       resolve_vue_options(options)
-      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
-      options[:"v-model"] ||= "#{namespace}.#{method}"
+      add_v_model_attribute(method, options)
       super(method, tag_value, options)
     end
 

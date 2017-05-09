@@ -38,5 +38,10 @@ module VueFormFor
         end
       end
     end
+
+    private def add_v_model_attribute(method, options)
+      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
+      options[:"v-model"] ||= "#{namespace}.#{method}"
+    end
   end
 end
