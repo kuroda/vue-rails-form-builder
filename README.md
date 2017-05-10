@@ -195,6 +195,21 @@ Example:
 <% end %>
 ```
 
+Data Initialization
+-------------------
+
+As the official Vue.js document says:
+
+> `v-model` will ignore the initial `value`, `checked` or `selected` attributes
+> found on any form elements.
+> (https://vuejs.org/v2/guide/forms.html)
+
+Because of this, all form controls get reset after the Vue component is mounted.
+
+However, you can use
+[vue-data-scooper](https://github.com/kuroda/vue-data-scooper) plugin
+in order to keep the original state of the form.
+
 License
 -------
 
