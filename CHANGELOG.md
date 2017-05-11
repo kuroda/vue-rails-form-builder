@@ -1,5 +1,9 @@
 # CHANGELOG - vue-form-for
 
+## 0.4.0 (2017-05-11)
+
+* Support SELECT tag.
+
 ## 0.3.3 (2017-05-09)
 
 * Generate v-model attr for check boxes and radio buttons.
