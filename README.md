@@ -1,6 +1,8 @@
 vue-form-for
 ============
 
+[![Gem Version](https://badge.fury.io/rb/vue-form-for.svg)](https://badge.fury.io/rb/vue-form-for)
+
 A custom Rails form builder for Vue.js
 
 Synopsis
