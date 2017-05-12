@@ -75,6 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 ```
 
+<div style="color: gray; margin: 20px; padding; 10px; border: gray 1px solid">
+If you want to initialize the data of Vue component using the form status,
+use `vue-data-scooper` plugin described [below](#data-initialization).
+</div>
+
 Add this line to the ERB template:
 
 ```erb
@@ -197,6 +202,7 @@ Example:
 <% end %>
 ```
 
+<a id="data-initialization"></a>
 Data Initialization
 -------------------
 
