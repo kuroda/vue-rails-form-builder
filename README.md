@@ -83,6 +83,15 @@ Add this line to the ERB template:
 
 Then, you can get the value of `user[name]` field by the `user.name`.
 
+If you use Rails 5.1 or above, you can also use `vue_form_with`:
+
+```erb
+<%= vue_form_with model: User.new do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create" %>
+<% end %>
+```
+
 Tag Helper
 ----------
 
@@ -215,7 +224,7 @@ in order to keep the original state of the form.
 License
 -------
 
-The `initial-test-data` is distributed under the MIT license. ([MIT-LICENSE](https://github.com/oiax/initial-test-data/blob/master/MIT-LICENSE))
+The `vue-rails-form-builder` is distributed under the MIT license. ([MIT-LICENSE](https://github.com/kuroda/vue-rails-form-builder/blob/master/MIT-LICENSE))
 
 Author
 ------
