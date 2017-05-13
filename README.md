@@ -92,6 +92,13 @@ If you use Rails 5.1 or above, you can also use `vue_form_with`:
 <% end %>
 ```
 
+Demo App
+--------
+
+Visit [vue-rails-form-builder-demo](https://github.com/kuroda/vue-rails-form-builder-demo)
+for a working Rails demo application using the `vue-rails-form-builder`.
+
+
 Tag Helper
 ----------
 
