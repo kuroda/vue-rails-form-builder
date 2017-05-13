@@ -1,7 +1,7 @@
-vue-form-for
-============
+vue-rails-form-builder
+======================
 
-[![Gem Version](https://badge.fury.io/rb/vue-form-for.svg)](https://badge.fury.io/rb/vue-form-for)
+[![Gem Version](https://badge.fury.io/rb/vue-rails-form-builder.svg)](https://badge.fury.io/rb/vue-rails-form-builder)
 
 A custom Rails form builder for Vue.js
 
@@ -27,7 +27,7 @@ Installation
 Add the following line to `Gemfile`:
 
 ```ruby
-gem "vue-form-for"
+gem "vue-rails-form-builder"
 ```
 
 Run `bundle install` on the terminal.

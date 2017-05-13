@@ -1,4 +1,4 @@
-module VueFormFor
+module VueRailsFormBuilder
   module VueOptionsResolver
     private def resolve_vue_options(options)
       if options[:bind].kind_of?(Hash)

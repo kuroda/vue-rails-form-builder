@@ -1,8 +1,8 @@
 require_relative "./vue_options_resolver"
 
-module VueFormFor
+module VueRailsFormBuilder
   class FormBuilder < ActionView::Helpers::FormBuilder
-    include VueFormFor::VueOptionsResolver
+    include VueRailsFormBuilder::VueOptionsResolver
 
     (field_helpers - [:label, :check_box, :radio_button, :fields_for])
       .each do |selector|

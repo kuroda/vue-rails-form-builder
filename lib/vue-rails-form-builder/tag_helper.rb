@@ -1,8 +1,8 @@
 require_relative "./vue_options_resolver"
 
-module VueFormFor
+module VueRailsFormBuilder
   module TagHelper
-    include VueFormFor::VueOptionsResolver
+    include VueRailsFormBuilder::VueOptionsResolver
 
     def vue_tag(name, options = nil, open = false, escape = true)
       resolve_vue_options(options) if options

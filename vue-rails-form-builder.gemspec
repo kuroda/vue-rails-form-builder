@@ -1,11 +1,11 @@
 version = File.read(File.expand_path("../VERSION",__FILE__)).strip
 
 Gem::Specification.new do |s|
-  s.name        = "vue-form-for"
+  s.name        = "vue-rails-form-builder"
   s.version     = version
   s.authors     = [ "Tsutomu KURODA" ]
   s.email       = "t-kuroda@oiax.jp"
-  s.homepage    = "https://github.com/kuroda/vue-form-for"
+  s.homepage    = "https://github.com/kuroda/vue-rails-form-builder"
   s.description = "This gem provides three view helpers for Rails app: " +
                   "vue_form_for, vue_tag, vue_content_tag."
   s.summary     = "A custom Rails form builder for Vue.js"
