@@ -16,4 +16,10 @@ Gem::Specification.new do |s|
   s.add_dependency "railties", ">= 4.2", "< 6"
 
   s.files = %w(CHANGELOG.md README.md MIT-LICENSE) + Dir.glob("lib/**/*")
+
+  s.post_install_message = <<-MESSAGE
+  !    The 'vue-form-for' gem has been deprecated and has been replaced by 'vue-rails-form-builder'.
+  !    See: https://rubygems.org/gems/vue-rails-form-builder
+  !    And: https://github.com/kuroda/vue-rails-form-builder
+  MESSAGE
 end
