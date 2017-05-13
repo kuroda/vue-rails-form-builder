@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = [ "Tsutomu KURODA" ]
   s.email       = "t-kuroda@oiax.jp"
   s.homepage    = "https://github.com/kuroda/vue-rails-form-builder"
-  s.description = "This gem provides three view helpers for Rails app: " +
-                  "vue_form_for, vue_tag, vue_content_tag."
+  s.description = "This gem provides four view helpers for Rails app: " +
+                  "vue_form_with, vue_form_for, vue_tag and vue_content_tag."
   s.summary     = "A custom Rails form builder for Vue.js"
   s.license     = "MIT"
 
