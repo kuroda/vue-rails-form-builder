@@ -40,8 +40,11 @@ module VueRailsFormBuilder
     end
 
     private def add_v_model_attribute(method, options)
-      namespace = @object_name.gsub(/\[/, ".").gsub(/\]/, "")
-      options[:"v-model"] ||= "#{namespace}.#{method}"
+      path = @object_name.gsub(/\[/, ".").gsub(/\]/, "").split(".")
+      if @options[:vue_scope]
+        path[0] = @options[:vue_scope]
+      end
+      options[:"v-model"] ||= (path + [ method ]).join(".")
     end
   end
 end

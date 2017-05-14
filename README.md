@@ -98,6 +98,16 @@ Demo App
 Visit [vue-rails-form-builder-demo](https://github.com/kuroda/vue-rails-form-builder-demo)
 for a working Rails demo application using the `vue-rails-form-builder`.
 
+Options
+-------
+
+To `vue_form_for` and `vue_form_with` methods you can provide the same options
+as `form_for` and `form_with`.
+
+There is a special option:
+
+* `:vue_scope` - The prefix used to the input field names within the Vue
+  component.
 
 Tag Helper
 ----------
