@@ -1,8 +1,12 @@
 # CHANGELOG - vue-rails-form-builder
 
+## 0.6.0 (2017-05-14)
+
+* Add `vue_scope` option to `vue_form_for` and `vue_form_with` methods.
+
 ## 0.5.0 (2017-05-12)
 
-* Change the name of this gem to `vue-rails-form-builder` from `vue-form-for`
+* Change the name of this gem to `vue-rails-form-builder` from `vue-form-for`.
 
 ## 0.4.0 (2017-05-11)
 
