@@ -252,17 +252,17 @@ This method is convenient especially when the form has nested attributes:
   <%= f.text_field :name %>
   <%= f.fields_for :emails do |g| %>
     <%= g.text_field :address,
-      bind: { disabled: "user.emails_attributes[#{g.index}]._destroy" } %>
+      disabled: "user.emails_attributes[#{g.index}]._destroy" %>
     <%= g.check_box :_destroy if g.object.persisted? %>
   <% end %>
-  <%= f.submit "Create", disabled: "user.name === ''" %>
+  <%= f.submit "Create", disabled: "#{f.vue_prefix}.name === ''" %>
 <% end %>
 ```
 
 Using the `vue_prefix` method, you can rewrite the fifth line more concisely:
 
 ```erb
-      bind: { disabled: g.vue_prefix + "._destroy" } %>
+      disabled: g.vue_prefix + "._destroy" %>
 ```
 
 Data Initialization
