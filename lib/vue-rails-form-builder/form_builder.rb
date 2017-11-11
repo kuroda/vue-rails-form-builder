@@ -47,5 +47,13 @@ module VueRailsFormBuilder
       resolve_vue_options(options)
       super(value, options, &block)
     end
+
+    def vue_prefix
+      path = @object_name.gsub(/\[/, ".").gsub(/\]/, "").split(".")
+      if @options[:vue_scope]
+        path[0] = @options[:vue_scope]
+      end
+      path.join(".").gsub(/\.(\d+)/, '[\1]')
+    end
   end
 end

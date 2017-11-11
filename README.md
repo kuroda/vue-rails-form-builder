@@ -223,6 +223,48 @@ Example:
 <% end %>
 ```
 
+The `vue_prefix` method of the Form Builder
+-------------------------------------------
+
+When you build HTML forms using `vue_form_for`, the form builder has the
+`vue_prefix` method that returns the *prefix string* to the Vue.js property names.
+
+See the following code:
+
+```erb
+<%= vue_form_for User.new do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit "Create", disabled: "user.name === ''" %>
+<% end %>
+```
+
+The `vue_prefix` method of the form builder (`f`) returns the string `"user"`
+so that you can rewrite the third line of the example above like this:
+
+```erb
+  <%= f.submit "Create", disabled: "#{f.vue_prefix}.name === ''" %>
+```
+
+This method is convenient especially when the form has nested attributes:
+
+```erb
+<%= vue_form_for @user do |f| %>
+  <%= f.text_field :name %>
+  <%= f.fields_for :emails do |g| %>
+    <%= g.text_field :address,
+      bind: { disabled: "user.emails_attributes[#{g.index}]._destroy" } %>
+    <%= g.check_box :_destroy if g.object.persisted? %>
+  <% end %>
+  <%= f.submit "Create", disabled: "user.name === ''" %>
+<% end %>
+```
+
+Using the `vue_prefix` method, you can rewrite the fifth line more concisely:
+
+```erb
+      bind: { disabled: g.vue_prefix + "._destroy" } %>
+```
+
 Data Initialization
 -------------------
 
