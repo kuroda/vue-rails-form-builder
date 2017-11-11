@@ -1,5 +1,9 @@
 # CHANGELOG - vue-rails-form-builder
 
+## 0.7.0 (2017-11-11)
+
+* Support nested attributes.
+
 ## 0.6.0 (2017-05-14)
 
 * Add `vue_scope` option to `vue_form_for` and `vue_form_with` methods.
