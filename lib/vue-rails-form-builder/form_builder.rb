@@ -38,6 +38,11 @@ module VueRailsFormBuilder
       super(method, choices, options, html_options, &block)
     end
 
+    def file_field(method, options = {})
+      resolve_vue_options(options)
+      super(method, options)
+    end
+
     def submit(value = nil, options = {})
       resolve_vue_options(options)
       super(value, options)
