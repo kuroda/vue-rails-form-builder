@@ -1,5 +1,9 @@
 # CHANGELOG - vue-rails-form-builder
 
+## 0.8.1 (2018-02-15)
+
+* Don't override the `file_filed` helper. Fix #3.
+
 ## 0.8.0 (2017-11-11)
 
 * Add `vue_prefix` method to the form builder.
