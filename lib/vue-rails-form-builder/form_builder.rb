@@ -4,7 +4,7 @@ module VueRailsFormBuilder
   class FormBuilder < ActionView::Helpers::FormBuilder
     include VueRailsFormBuilder::VueOptionsResolver
 
-    (field_helpers - [:label, :check_box, :radio_button, :fields_for])
+    (field_helpers - [:label, :check_box, :radio_button, :fields_for, :file_field])
       .each do |selector|
       class_eval <<-RUBY_EVAL, __FILE__, __LINE__ + 1
         def #{selector}(method, options = {})
