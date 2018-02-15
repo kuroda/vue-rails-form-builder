@@ -1,5 +1,9 @@
 # CHANGELOG - vue-rails-form-builder
 
+## 0.8.2 (2018-02-15)
+
+* Do override the `file_filed` helper to resolve vue.js options.
+
 ## 0.8.1 (2018-02-15)
 
 * Don't override the `file_filed` helper. Fix #3.
