@@ -1,3 +1,3 @@
 require "vue-rails-form-builder/form_builder"
 require "vue-rails-form-builder/railtie"
-puts "testing trigger"
+puts "testing trigger sonarcloud"
