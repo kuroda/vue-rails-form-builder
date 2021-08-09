@@ -44,7 +44,11 @@ module VueRailsFormBuilder
       if @options[:vue_scope]
         path[0] = @options[:vue_scope]
       end
-      options[:"v-model"] ||= (path + [ method ]).join(".")
+      options[:"v-model"] ||= if @options[:camelize]
+                                (path + [ method ]).join('.').camelize(:lower)
+                              else
+                                (path + [ method ]).join('.')
+                              end
       options[:"v-model"].gsub!(/\.(\d+)/, '[\1]')
     end
   end

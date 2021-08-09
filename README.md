@@ -92,6 +92,21 @@ If you use Rails 5.1 or above, you can also use `vue_form_with`:
 <% end %>
 ```
 
+By default, this gem render v-model tag with object and attributes snake-cased just like your model table columns. If you want to render the v-model tag with object and attribute camelized, you can pass the option `camelize` to the vue_form_for or vue_form_with tag:
+
+```erb
+<%= vue_form_with(model: GenericModel.new, camelize: true) do |f| %>
+  <%= f.text_field :generic_field %>
+  <%= f.submit "Create" %>
+<% end %>
+```
+
+This will render:
+
+```html
+ <input type="text" name="generic_model[generic_field]" id="generic_model_generic_field" v-model="genericModel.genericField"> 
+```
+
 Demo App
 --------
 
